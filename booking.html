@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="DataValidation.js"></script>
+</head>
+
+<body>
+    <header class="header bg-dark text-white" style="text-align: center;">
+        <h1> <a href="booking.html">Booking</a> | <a href="admin.html">Admin</a></h1>
+        <br />
+    </header>
+    <br />
+    <div class="container-sm border border-dark">
+        <form onsubmit="validateForm();return false;">
+            <div class="form-group">
+                <label for="firstNameInput">First Name</label>
+                <input type="text" class="form-control" id="firstNameInput" placeholder="Enter your first name"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="lastNameInput">Last Name</label>
+                <input type="text" class="form-control" id="lastNameInput" placeholder="Enter your Last name" required>
+            </div>
+            <div class="Phone Number">
+                <label for="phoneNumberInput">Phone Number</label>
+                <input type="text" class="form-control" id="phoneNumberInput" placeholder="Enter your Phone Number">
+            </div>
+            <div class="form-group">
+                <label for="unitInput">Unit(Optional)</label>
+                <input type="number" class="form-control" id="unitInput" placeholder="Enter your Unit" min="0">
+            </div>
+            <div class="form-group">
+                <label for="streetNumberInput">Street Number</label>
+                <input type="number" class="form-control" id="streetNumberInput" placeholder="Enter your Street number"
+                    min="1" required>
+            </div>
+            <div class="form-group">
+                <label for="streetNameInput">Street Name</label>
+                <input type="text" class="form-control" id="streetNameInput" placeholder="Enter your Street name"
+                    min="1" required>
+            </div>
+            <div class="form-group">
+                <label for="suburbInput">Suburb</label>
+                <input type="text" class="form-control" id="suburbInput" placeholder="Enter your Suburb" required>
+            </div>
+            <div class="form-group">
+                <label for="destSuburbInput">Destination Suburb</label>
+                <input type="text" class="form-control" id="destSuburbInput" placeholder="Enter the Destination Suburb"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="pickupDateInput">Pickup Date</label>
+                <input type="date" class="form-control" id="pickupDateInput" placeholder="Enter the Pickup date"
+                    required onchange="checkDateTimeInputCorrect()">
+                <span id="errDate" style="color: red;"></span>
+            </div>
+            <div class="form-group">
+                <label for="pickupTimeInput">Pickup Time</label>
+                <input type="time" class="form-control" id="pickupTimeInput" placeholder="Enter the Pickup time"
+                    required onchange="checkDateTimeInputCorrect();">
+                <span id="errTime" style="color: red;"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-primary">Reset</button>
+        </form>
+
+        <br />
+    </div>
+    <br />
+    <script>
+        let US_DATE_FORMAT = 1;
+        let NZ_DATE_FORMAT = 2;
+        var date = new Date();
+
+        document.getElementById("pickupDateInput").value = formatDate(date, US_DATE_FORMAT);
+        document.getElementById("pickupTimeInput").value = formatTime(date);
+    </script>
+    <script src="Booking.js"></script>
+    <script src="DataValidation.js"></script>
+</body>
+
+</html>

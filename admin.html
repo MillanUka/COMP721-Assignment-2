@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <header class="header bg-dark text-white" style="text-align: center;">
+        <h1> <a href="booking.html">Booking</a> | <a href="admin.html">Admin</a></h1>
+        <br />
+    </header>
+    <br />
+    <div class="container-xl border border-dark">
+        <form onsubmit="">
+            <div class="form-group">
+                <h2>Admin</h2>
+                <div class="input-group mb-10">
+                    <button class="btn-primary" id="viewAllBUtton" onclick="createShowBookingsRequest();return false;">View
+                        All</button>
+                    <span> (Shows all unassigned bookings within two hours from the current time) </span>
+                </div>
+                <br />
+                <div class="input-group mb-10">
+                    <input id="assignTaxi" type="text" value="" placeholder="Enter a booking reference ID" />
+                    <div class="input-group-append">
+                        <button class="btn-primary" id="assignTaxiButton"
+                            onclick="assignTaxiToBooking();return false;">Assign Taxi</button>
+                        <span> (You can click on a booking to get the ID) </span>
+                    </div>
+                </div>
+            </div>
+        </form>
+        </form>
+        <div id="results" class="container-xl">
+
+        </div>
+    </div>
+    <script src="Admin.js"></script>
+</body>
+
+</html>
