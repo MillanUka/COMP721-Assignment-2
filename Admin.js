@@ -1,3 +1,8 @@
+/*
+Millan Uka
+17981567
+jcn0852@autuni.ac.nz
+*/
 function createShowBookingsRequest() {
     var xhr = new XMLHttpRequest();
 

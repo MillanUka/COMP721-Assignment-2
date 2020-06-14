@@ -1,3 +1,8 @@
+/*
+Millan Uka
+17981567
+jcn0852@autuni.ac.nz
+*/
 function post() {
     var xhr = new XMLHttpRequest();
 
@@ -38,11 +43,19 @@ function post() {
 Creates an unique user id. 
 */
 function generateUUID() {
+    //Seeding the randomness with time and time since pageload to get a more random number
+
+    var d = new Date().getTime();//Timestamp
+    var d2 = (performance && performance.now && (performance.now()*1000)) || 0;//Time in microseconds since page-load or 0 if unsupporte
     //Gets a random character
     function getRandomChar(c) {
-        // Get a random number
-        var r = Math.random() * 16;
-        // DO some bitwise operations to the bits and convert them to a string
+        var r = Math.random() * 16;//random number between 0 and 16
+        if(d > 0){
+            r = (d + r)%16 | 0;
+            d = Math.floor(d/16);
+        } else {            r = (d2 + r)%16 | 0;
+            d2 = Math.floor(d2/16);
+        }
         return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
     }
     //Replaces all the xs and y with a random character
