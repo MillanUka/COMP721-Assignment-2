@@ -3,13 +3,20 @@
 Files
 File Name	Description
 admin.html	- This is the HTML document with the visual frontend of the admin page
+
 Admin.js	 - Contains the frontend code for the html page. Contains code for sending requests to the server.
+
 AssignTaxiProcess.php -	Controls the assigning of a taxi. It sets the status of a record to “assigned” if the reference id exists. If there is no such record it will return an error.
+
 booking.html - This is the HTML document with the visual frontend of the booking page
+
 Booking.js	- Contains the frontend code for the booking. It contains code that sends request to the server to make a booking. It also has code to create 32 characters Unique user ID
 BookingProcess.php - Contains code that controls the booking process. It handles inserting a record into the database
+
 create_table.txt - Has the SQL command that was used to create the database
+
 DataValidation.js - Contains the code, which handles validating the date and time of the booking and will control the error messages below the input boxes in the booking page. It also has some utility functions which format the date and time in NZST times.
+
 ShowBookingsProcess.php - Contains the code which shows the bookings that are within two hours from the current time. 
 
 
